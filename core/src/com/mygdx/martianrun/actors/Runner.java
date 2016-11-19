@@ -20,13 +20,15 @@ public class Runner extends GameActor {
     }
 
     public void jump() {
-        if(!jumping) {
+        System.out.println("In the jump function");
+        if(!(jumping || dodging)) {
             body.applyLinearImpulse(getUserData().getJumpingLinearImpulse(), body.getWorldCenter(), true);
             jumping = true;
         }
     }
 
     public void dodge() {
+        System.out.println("In the dodge function");
         if(!jumping) {
             body.setTransform(getUserData().getDodgePosition(), getUserData().getDodgeAngle());
             dodging = true;
