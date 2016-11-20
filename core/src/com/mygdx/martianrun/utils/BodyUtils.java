@@ -9,7 +9,7 @@ import com.mygdx.martianrun.enums.UserDataType;
  */
 public class BodyUtils {
 
-    // check whether the body is 
+    // check whether the body is
     public static boolean bodyIsRunner(Body body) {
         UserData userData = (UserData) body.getUserData();
 
@@ -29,4 +29,17 @@ public class BodyUtils {
 
         return  userData != null && userData.getUserDataType() == UserDataType.ENEMY;
     }
-}
+
+    // to check whether the body is in bounds or not
+    public static boolean bodyInBounds(Body body) {
+        UserData userData = (UserData) body.getUserData();
+
+        switch (userData.getUserDataType()) {
+            case RUNNER:
+            case ENEMY:
+                return  body.getPosition().x + userData.getWidth() / 2 > 0;
+        }
+
+        return true;
+    }
+ }

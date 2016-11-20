@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.mygdx.martianrun.actors.Enemy;
 import com.mygdx.martianrun.actors.Ground;
 import com.mygdx.martianrun.actors.Runner;
 import com.mygdx.martianrun.utils.BodyUtils;
@@ -44,8 +45,10 @@ public class GameStage extends Stage implements ContactListener {
 
     public void setUpWorld() {
         world = WorldUtils.createWorld();
+        world.setContactListener(this);
         setUpGround();
         setUpRunner();
+        createEnemy();
     }
 
     public void setUpRunner() {
@@ -84,6 +87,11 @@ public class GameStage extends Stage implements ContactListener {
             world.step(TIME_STEP, 6, 2);
             accumulator -= TIME_STEP;
         }
+    }
+
+    public void createEnemy() {
+        Enemy enemy = new Enemy(WorldUtils.createEnemy(world));
+        addActor(enemy);
     }
 
     @Override
@@ -140,6 +148,7 @@ public class GameStage extends Stage implements ContactListener {
         if((BodyUtils.bodyIsRunner(a) && BodyUtils.bodyIsGround(b)) || (BodyUtils.bodyIsGround(a) && BodyUtils.bodyIsRunner(b))) {
             runner.landed();
         }
+        else if()
 
     }
 
