@@ -38,4 +38,14 @@ public class Constants {
 
     public static final float RUNNER_GRAVITY_SCALE = 3f;
     public static final Vector2 RUNNER_JUMPING_LINEAR_IMPULSE = new Vector2(0, 13f);
+    public static final float RUNNER_HIT_ANGULAR_IMPULSE = 10f;
+
+    // parameters for the enemies
+    public static final float ENEMY_X = 25f;
+    public static final float ENEMY_DENSITY = RUNNER_DENSITY;
+    public static final float RUNNING_SHORT_ENEMY_Y = 1.5f;
+    public static final float RUNNING_LONG_ENEMY_Y = 2f;
+    public static final float FLYING_ENEMY_Y = 3;
+    public static final Vector2 ENEMY_LINEAR_VELOCITY = new Vector2(-10f, 0);
+
 }

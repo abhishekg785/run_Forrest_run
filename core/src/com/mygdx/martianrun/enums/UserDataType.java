@@ -6,5 +6,6 @@ package com.mygdx.martianrun.enums;
 public enum UserDataType {
 
     GROUND,
-    RUNNER
+    RUNNER,
+    ENEMY
 }

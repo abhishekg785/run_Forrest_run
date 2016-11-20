@@ -9,15 +9,24 @@ import com.mygdx.martianrun.enums.UserDataType;
  */
 public class BodyUtils {
 
+    // check whether the body is 
     public static boolean bodyIsRunner(Body body) {
         UserData userData = (UserData) body.getUserData();
 
         return userData != null && userData.getUserDataType() == UserDataType.RUNNER;
     }
 
+    // check whether the body is a ground or not
     public static boolean bodyIsGround(Body body) {
         UserData userData = (UserData) body.getUserData();
 
         return userData != null && userData.getUserDataType() == UserDataType.GROUND;
+    }
+
+    // to check whether the body is enemy or not
+    public static boolean bodyIsEnemey(Body body) {
+        UserData userData = (UserData) body.getUserData();
+
+        return  userData != null && userData.getUserDataType() == UserDataType.ENEMY;
     }
 }
