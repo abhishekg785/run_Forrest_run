@@ -102,7 +102,7 @@ public class GameStage extends Stage implements ContactListener {
 //        System.out.println("In the update function");
         if(!BodyUtils.bodyInBounds(body)) {
             System.out.println("CHECKING THE FUNCTION");
-            if(BodyUtils.bodyIsEnemey(body) && runner.isHit()) {
+            if(BodyUtils.bodyIsEnemey(body) && !runner.isHit()) {
                 createEnemy();
             }
             world.destroyBody(body);
