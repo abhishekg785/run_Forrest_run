@@ -6,6 +6,9 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Scaling;
+import com.badlogic.gdx.utils.viewport.ScalingViewport;
+import com.mygdx.martianrun.actors.Background;
 import com.mygdx.martianrun.actors.Enemy;
 import com.mygdx.martianrun.actors.Ground;
 import com.mygdx.martianrun.actors.Runner;
@@ -39,18 +42,24 @@ public class GameStage extends Stage implements ContactListener {
     private Vector3 touchPoint;
 
     public GameStage() {
+        super(new ScalingViewport(Scaling.stretch, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT)));
         setUpWorld();
         setUpCamera();
         setUpTouchControlAreas();
-        renderer = new Box2DDebugRenderer();
+//        renderer = new Box2DDebugRenderer();
     }
 
     public void setUpWorld() {
         world = WorldUtils.createWorld();
         world.setContactListener(this);
+        setUpBackground();
         setUpGround();
         setUpRunner();
         createEnemy();
+    }
+
+    public void setUpBackground() {
+        addActor(new Background());
     }
 
     public void setUpRunner() {

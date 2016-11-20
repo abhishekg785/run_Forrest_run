@@ -48,4 +48,7 @@ public class Constants {
     public static final float FLYING_ENEMY_Y = 3;
     public static final Vector2 ENEMY_LINEAR_VELOCITY = new Vector2(-10f, 0);
 
+    // assets in the android folder
+    public static final String BACKGROUND_IMAGE_PATH = "background.png";
+
 }
