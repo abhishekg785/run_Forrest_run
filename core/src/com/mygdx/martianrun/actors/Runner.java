@@ -54,7 +54,7 @@ public class Runner extends GameActor {
         hit = true;
     }
 
-    private boolean isHit() {
+    public boolean isHit() {
         return hit;
     }
 

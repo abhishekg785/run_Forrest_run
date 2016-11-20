@@ -70,6 +70,7 @@ public class WorldUtils {
         body.createFixture(shape, enemyType.getDensity());
         body.resetMassData();
         EnemyUserData userData = new EnemyUserData(enemyType.getWidth(), enemyType.getHeight());
+        body.setUserData(userData);
         shape.dispose();
         return body;
     }

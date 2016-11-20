@@ -1,6 +1,7 @@
 package com.mygdx.martianrun.box2d;
 
 import com.badlogic.gdx.math.Vector2;
+import com.mygdx.martianrun.actors.Enemy;
 import com.mygdx.martianrun.enums.UserDataType;
 import com.mygdx.martianrun.utils.Constants;
 
@@ -10,6 +11,10 @@ import com.mygdx.martianrun.utils.Constants;
 public class EnemyUserData extends UserData {
 
     private Vector2 linearVelocity;
+
+    public EnemyUserData() {
+
+    }
 
     public EnemyUserData(float width, float height) {
         super(width, height);
