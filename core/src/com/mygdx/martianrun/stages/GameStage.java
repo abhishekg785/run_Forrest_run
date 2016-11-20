@@ -25,7 +25,7 @@ public class GameStage extends Stage implements ContactListener {
     private World world;
     private Ground ground;
     private Runner runner;
-    private Enemy enemy;
+//    private Enemy enemy;
 
     private final float TIME_STEP = 1 / 300f;
     private float accumulator = 0f;
@@ -99,7 +99,9 @@ public class GameStage extends Stage implements ContactListener {
     }
 
     private void update(Body body) {
+//        System.out.println("In the update function");
         if(!BodyUtils.bodyInBounds(body)) {
+            System.out.println("CHECKING THE FUNCTION");
             if(BodyUtils.bodyIsEnemey(body) && runner.isHit()) {
                 createEnemy();
             }
@@ -109,7 +111,7 @@ public class GameStage extends Stage implements ContactListener {
 
     public void createEnemy() {
         System.out.println("Inside the createEnemy function");
-        enemy = new Enemy(WorldUtils.createEnemy(world));
+        Enemy enemy = new Enemy(WorldUtils.createEnemy(world));
         addActor(enemy);
     }
 
@@ -162,12 +164,13 @@ public class GameStage extends Stage implements ContactListener {
     public void beginContact(Contact contact) {
 
         Body a = contact.getFixtureA().getBody();
-        Body b = contact.getFixtureA().getBody();
+        Body b = contact.getFixtureB().getBody();
 
         if((BodyUtils.bodyIsRunner(a) && BodyUtils.bodyIsEnemey(b)) || (BodyUtils.bodyIsRunner(b) && BodyUtils.bodyIsEnemey(a))){
             runner.hit();
         }
         else if((BodyUtils.bodyIsRunner(a) && BodyUtils.bodyIsGround(b)) || (BodyUtils.bodyIsGround(a) && BodyUtils.bodyIsRunner(b))) {
+            System.out.println("The runner has landed");
             runner.landed();
         }
 

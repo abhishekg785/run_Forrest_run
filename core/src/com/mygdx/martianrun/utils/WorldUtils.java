@@ -60,6 +60,7 @@ public class WorldUtils {
     }
 
     public static Body createEnemy(World world) {
+        System.out.println("Creating enemy");
         EnemyType enemyType = RandomUtils.getRandomEnemyType();
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.KinematicBody;

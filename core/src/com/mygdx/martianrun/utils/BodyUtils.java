@@ -32,7 +32,7 @@ public class BodyUtils {
 
     // to check whether the body is in bounds or not
     public static boolean bodyInBounds(Body body) {
-        UserData userData = (UserData) body.getUserData();
+        UserData userData = (UserData)body.getUserData();
 
         switch (userData.getUserDataType()) {
             case RUNNER:
