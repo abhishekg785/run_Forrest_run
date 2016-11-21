@@ -13,6 +13,7 @@ import com.mygdx.martianrun.actors.Enemy;
 import com.mygdx.martianrun.actors.Ground;
 import com.mygdx.martianrun.actors.Runner;
 import com.mygdx.martianrun.utils.BodyUtils;
+import com.mygdx.martianrun.utils.Constants;
 import com.mygdx.martianrun.utils.WorldUtils;
 import javafx.scene.shape.Rectangle;
 
@@ -22,8 +23,8 @@ import javafx.scene.shape.Rectangle;
 public class GameStage extends Stage implements ContactListener {
 
     // This will be our viewport measurements while working with the debug renderer
-    private static final int VIEWPORT_WIDTH = 20;
-    private static final int VIEWPORT_HEIGHT = 13;
+    private static final int VIEWPORT_WIDTH = Constants.APP_WIDTH;
+    private static final int VIEWPORT_HEIGHT = Constants.APP_HEIGHT;
 
     private World world;
     private Ground ground;
@@ -124,11 +125,11 @@ public class GameStage extends Stage implements ContactListener {
         addActor(enemy);
     }
 
-    @Override
-    public void draw() {
-        super.draw();
-        renderer.render(world, camera.combined);
-    }
+//    @Override
+//    public void draw() {
+//        super.draw();
+//        renderer.render(world, camera.combined);
+//    }
 
     @Override
     public boolean touchDown(int x, int y, int pointer, int button) {

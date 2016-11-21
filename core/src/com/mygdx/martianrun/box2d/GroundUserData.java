@@ -10,4 +10,9 @@ public class GroundUserData extends UserData {
         super();
         userDataType = UserDataType.GROUND;
     }
+
+    public GroundUserData(float width, float height) {
+        super(width, height);
+        userDataType = userDataType.GROUND;
+    }
 }

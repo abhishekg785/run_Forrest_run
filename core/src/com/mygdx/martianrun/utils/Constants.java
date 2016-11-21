@@ -17,7 +17,7 @@ public class Constants {
     // parameters for creating a Ground
     public static final float GROUND_X = 0;
     public static final float GROUND_Y = 0;
-    public static final float GROUD_WIDTH = 25f;
+    public static final float GROUND_WIDTH = 25f;
     public static final float GROUND_HEIGHT = 2f;
     public static final float GROUND_DENSITY = 0f;
 
@@ -27,6 +27,7 @@ public class Constants {
     public static final float RUNNER_Y = GROUND_Y + GROUND_HEIGHT;
     public static final float RUNNER_WIDTH = 1f;
     public static final float RUNNER_HEIGHT = 2f;
+    public static final float WORLD_TO_SCREEN = 32;    // 1m as 32 pixels
     public static float RUNNER_DENSITY = 0.5f;
 
     // next step is to make the player dodge
@@ -50,5 +51,6 @@ public class Constants {
 
     // assets in the android folder
     public static final String BACKGROUND_IMAGE_PATH = "background.png";
+    public static final String GROUND_IMAGE_PATH = "ground.png";
 
 }

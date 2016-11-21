@@ -7,8 +7,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.mygdx.martianrun.utils.Constants;
-import com.sun.corba.se.impl.orbutil.closure.Constant;
-
 
 /**
  * Created by hiro on 21/11/16.
@@ -21,13 +19,16 @@ public class Background extends Actor {
     private int speed = 100;
 
     public Background() {
-        textureRegion = new TextureRegion(new Texture(Gdx.files.internal(Constants.BACKGROUND_IMAGE_PATH)));
+        Texture texture = new Texture(Gdx.files.internal(Constants.BACKGROUND_IMAGE_PATH));
+        textureRegion = new TextureRegion(texture);
         textureRegionBounds1 = new Rectangle(0 - Constants.APP_WIDTH / 2, 0, Constants.APP_WIDTH, Constants.APP_HEIGHT);
         textureRegionBounds2 = new Rectangle(Constants.APP_WIDTH / 2, 0, Constants.APP_WIDTH, Constants.APP_HEIGHT);
     }
 
+
     @Override
     public void act(float delta) {
+        System.out.println("this is the act of the background");
         if(leftBoundsReached(delta)) {
             resetBounds();
         }
@@ -44,7 +45,7 @@ public class Background extends Actor {
     }
 
     private boolean leftBoundsReached(float delta) {
-        return (textureRegionBounds2.x = (delta * speed)) <= 0;
+        return (textureRegionBounds2.x - (delta * speed)) <= 0;
     }
 
     private void updateXBounds(float delta) {
