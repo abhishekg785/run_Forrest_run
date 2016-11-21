@@ -41,6 +41,7 @@ public class Runner extends GameActor {
         hitTexture = textureAtlas.findRegion(Constants.RUNNER_HIT_REGION_NAME);
     }
 
+    // animating the runner
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
