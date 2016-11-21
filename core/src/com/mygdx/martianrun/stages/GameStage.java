@@ -2,6 +2,7 @@ package com.mygdx.martianrun.stages;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -15,7 +16,6 @@ import com.mygdx.martianrun.actors.Runner;
 import com.mygdx.martianrun.utils.BodyUtils;
 import com.mygdx.martianrun.utils.Constants;
 import com.mygdx.martianrun.utils.WorldUtils;
-import javafx.scene.shape.Rectangle;
 
 /**
  * Created by hiro on 18/11/16.
