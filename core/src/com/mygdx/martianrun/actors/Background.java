@@ -45,6 +45,7 @@ public class Background extends Actor {
     }
 
     private boolean leftBoundsReached(float delta) {
+        System.out.println("left bound reached for the background pic");
         return (textureRegionBounds2.x - (delta * speed)) <= 0;
     }
 

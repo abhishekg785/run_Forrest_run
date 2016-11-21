@@ -50,7 +50,7 @@ public class Ground extends GameActor{
     }
 
     private boolean leftBoundReached(float delta) {
-        System.out.println("left bound reached");
+        System.out.println("left bound of the ground reached");
         return (textureRegionBounds2.getX() - transformToScreen(delta * speed)) <= 0;
     }
 
