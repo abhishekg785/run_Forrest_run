@@ -39,7 +39,8 @@ public class MainMenuScreen implements Screen {
 
         game.batch.begin();
         game.font.draw(game.batch, "Welcome to the 'Run Forrest Run' ", 100, 150);
-        game.font.draw(game.batch, "Tap anywhere to begin!", 100, 150);
+        game.font.draw(game.batch, "Tap anywhere to begin!", 100, 120);
+        game.font.draw(game.batch, "Created by Abhishek Goswami", 600, 30);
         game.batch.end();
 
         if(Gdx.input.isTouched()) {
